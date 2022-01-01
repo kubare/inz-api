@@ -11,6 +11,7 @@ import com.example.biuropodrozyapi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -21,6 +22,10 @@ public class BookedService {
     private TripRepository tripRepo;
     @Autowired
     private UserRepository userRepo;
+
+    public List<BookedTrip> findAllBookedTrips() {
+        return bookedRepo.findAll();
+    }
 
     public String book(BookedTripDTO bookedTripDTO) {
         BookedTrip bookedTripA = new BookedTrip();

@@ -1,7 +1,9 @@
 package com.example.biuropodrozyapi.dto;
 
-public class BookedTripDTO {
+public class BookResponseDTO {
+    private String idBook;
     private String idTrip;
+    private String country;
     private String username;
     private String firstName;
     private String lastName;
@@ -12,15 +14,44 @@ public class BookedTripDTO {
     private String apartamentName;
     private String postCode;
 
-    public BookedTripDTO() {
+    public BookResponseDTO() {
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
+    public BookResponseDTO(String idBook, String idTrip, String username, String firstName, String lastName, String numberPhone, String idCard, String city, String street, String apartamentName, String postCode) {
+        this.idBook = idBook;
+        this.idTrip = idTrip;
         this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.numberPhone = numberPhone;
+        this.idCard = idCard;
+        this.city = city;
+        this.street = street;
+        this.apartamentName = apartamentName;
+        this.postCode = postCode;
+    }
+
+    public BookResponseDTO(String idBook, String idTrip, String country, String username, String firstName, String lastName, String numberPhone, String idCard, String city, String street, String apartamentName, String postCode) {
+        this.idBook = idBook;
+        this.idTrip = idTrip;
+        this.country = country;
+        this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.numberPhone = numberPhone;
+        this.idCard = idCard;
+        this.city = city;
+        this.street = street;
+        this.apartamentName = apartamentName;
+        this.postCode = postCode;
+    }
+
+    public String getIdBook() {
+        return idBook;
+    }
+
+    public void setIdBook(String idBook) {
+        this.idBook = idBook;
     }
 
     public String getIdTrip() {
@@ -29,6 +60,14 @@ public class BookedTripDTO {
 
     public void setIdTrip(String idTrip) {
         this.idTrip = idTrip;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getFirstName() {
@@ -93,5 +132,13 @@ public class BookedTripDTO {
 
     public void setPostCode(String postCode) {
         this.postCode = postCode;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 }
