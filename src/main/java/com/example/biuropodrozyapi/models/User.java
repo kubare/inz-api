@@ -1,7 +1,6 @@
 package com.example.biuropodrozyapi.models;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -25,6 +24,10 @@ public class User {
     @Email
     private String email;
 
+
+    @DBRef
+    private Collection<BookedTrip> bookedTrips = new ArrayList<>();
+
     @NotBlank
     @Size(max = 120)
     private String password;
@@ -39,6 +42,14 @@ public class User {
         this.username = username;
         this.email = email;
         this.password = password;
+    }
+
+    public Collection<BookedTrip> getBookedTrips() {
+        return bookedTrips;
+    }
+
+    public void setBookedTrips(Collection<BookedTrip> bookedTrips) {
+        this.bookedTrips = bookedTrips;
     }
 
     public String getId() {

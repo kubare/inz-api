@@ -4,6 +4,7 @@ import com.example.biuropodrozyapi.models.Trip;
 import com.example.biuropodrozyapi.models.User;
 import com.example.biuropodrozyapi.security.services.TripService;
 import com.example.biuropodrozyapi.security.services.UserDetailsServiceImpl;
+import org.apache.coyote.http11.filters.SavedRequestInputFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -25,4 +26,5 @@ public class UserController {
     public Iterable<Trip> getAll() {
         return trips.findAll();
     }
+    
 }
